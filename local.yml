@@ -8,8 +8,12 @@
     - name: Create my user account
       user:
         name: eshearer
-        crate_home: true
+        create_home: true
         shell: /bin/bash
-        ssh_public_key: 'ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAHVXhv0y3FG6YFE9+6ozcsTlvA7mNzOhQTwX+BJXzqr2p3wODcvdIaRLa+fAMnDSPEl78PPIEgIyhjcPxHDYtZ6JQF1jeSh3pD+bIOaegcMcdrI2g2NjMvvEopZFT1fJxlqxzzXwrbcYV3pAHeHconIDr03aguDM9Yge/6k/I0a/CRyNQ== eshearer@M-C02X45QTJGH6'
         groups: sudo
         state: present
+    - name: Add authorized key
+      authorized_key:
+        user: eshearer
+        state: present
+        key: 'ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAHVXhv0y3FG6YFE9+6ozcsTlvA7mNzOhQTwX+BJXzqr2p3wODcvdIaRLa+fAMnDSPEl78PPIEgIyhjcPxHDYtZ6JQF1jeSh3pD+bIOaegcMcdrI2g2NjMvvEopZFT1fJxlqxzzXwrbcYV3pAHeHconIDr03aguDM9Yge/6k/I0a/CRyNQ== eshearer@M-C02X45QTJGH6'
