@@ -1,5 +1,6 @@
 ---
-- name: Server Setup
+- name: setmeup
+  hosts: localhost
   connection: localhost
   become: true
 
